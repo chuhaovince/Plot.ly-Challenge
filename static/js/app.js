@@ -1,10 +1,12 @@
 // Create the url to the samples.json file
 const jsonurl = "../assets/json/samples.json";
 
+// store the raw data in ram so we dont have to query it everytime we call the function
+const rawData = d3.json(jsonurl);
 
 // Define a function that fetch the info for a specific individual
 function individual(idNum = 940){
-    d3.json(jsonurl).then(function(data) {
+    rawData.then(function(data) {
         var filteredsample = data.samples.filter(item => item.id == idNum);
         var filterMetadata = data.metadata.filter(item => item.id == idNum);
         console.log(filteredsample);
@@ -35,7 +37,7 @@ function individual(idNum = 940){
     };
 
 // loop through all the ids and right them into the index.html
-d3.json(jsonurl).then(function(data) {
+rawData.then(function(data) {
     for (i=0; i<data.names.length; i++) {
         d3.select("#selDataset").append("option").attr("value",data.names[i]).html(data.names[i]);
         console.log(d3.select("option").attr("value"));

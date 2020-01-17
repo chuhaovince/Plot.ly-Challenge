@@ -27,8 +27,8 @@ function individual(idNum = 940){
         // clear the previous info first
         d3.select("#sample-metadata").html("");
         for (i = 0; i < Object.keys(filterMetadata[0]).length; i++) {
-            if (Object.values(filterMetadata[0])[i] == null) {
-                filterMetadata[0][i] = "Unknown";
+            if (Object.values(filterMetadata[0])[i] == undefined) {
+                d3.select("#sample-metadata").append("p").html(`${Object.keys(filterMetadata[0])[i]} : N/A`);
             } else {
                 d3.select("#sample-metadata").append("p").html(`${Object.keys(filterMetadata[0])[i]} : ${Object.values(filterMetadata[0])[i]}`);
             };

@@ -20,7 +20,7 @@ function individual(idNum = 940){
             orientation : "h",
         };
         let layout = {
-            title : `Top 10 OTUs for id ${filteredsample[0].id}`
+            title : `Top 10 OTUs for ID ${filteredsample[0].id}`
         }
         let plotdata = [trace_bar];
         Plotly.newPlot("bar",plotdata,layout);
@@ -61,7 +61,7 @@ function individual(idNum = 940){
         };
         console.log(Math.max(...filteredsample[0].sample_values));
         layout = {
-            title : `Top 10 OTUs for id ${filteredsample[0].id}`,
+            title : `Top 10 OTUs for ID ${filteredsample[0].id}`,
             xaxis : {
                 title : `OTU ID ${filteredsample[0].id}`
             },

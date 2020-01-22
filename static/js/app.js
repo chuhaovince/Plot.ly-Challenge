@@ -127,7 +127,7 @@ function individual(idNum = 940){
 // loop through all the ids and right them into the index.html
 rawData.then(function(data) {
     for (i=0; i<data.names.length; i++) {
-        d3.select("#selDataset").append("option").attr("value",data.names[i]).html(data.names[i]);
+        d3.select("#selDataset").append("option").attr("value",data.names[i]).text(data.names[i]);
         console.log(d3.select("option").attr("value"));
     };
 });

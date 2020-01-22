@@ -133,10 +133,12 @@ rawData.then(function(data) {
 });
 
 
+// on change of selected option, call function optionChanged
 d3.selectAll("#selDataset").on("change", optionChanged());
 
 
 function optionChanged(id) {
+    // call individual function
     individual(id);
 };
 

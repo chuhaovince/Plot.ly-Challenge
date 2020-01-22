@@ -61,7 +61,7 @@ function individual(idNum = 940){
         };
         console.log(Math.max(...filteredsample[0].sample_values));
         layout = {
-            title : `Top 10 OTUs for ID ${filteredsample[0].id}`,
+            title : `OTUs for ID ${filteredsample[0].id}`,
             xaxis : {
                 title : `OTU ID ${filteredsample[0].id}`
             },

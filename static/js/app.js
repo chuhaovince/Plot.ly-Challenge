@@ -1,5 +1,5 @@
 // Create the url to the samples.json file
-const jsonurl = "../../assets/json/samples.json";
+const jsonurl = "../assets/json/samples.json";
 
 // store the raw data in ram so we dont have to query it everytime we call the function
 const rawData = d3.json(jsonurl);
@@ -14,13 +14,16 @@ function individual(idNum = 940){
         // Bar chat
         var trace_bar = {
             x : filteredsample[0].sample_values.slice(0,10).reverse(),
-            y : filteredsample[0].otu_ids.slice(0,10).reverse().map(num => `OTU ${num.toString()}`),
+            y : filteredsample[0].otu_ids.slice(0,10).reverse().map(num => `OUT ${num}`),
             text : filteredsample[0].otu_labels.slice(0,10).reverse(),
             type : "bar",
             orientation : "h",
         };
         let layout = {
-            title : `Top 10 OTUs for ID ${filteredsample[0].id}`
+            title : `Top 10 OTUs for ID ${filteredsample[0].id}`,
+            yaxis : {
+                type : "category"
+            }
         }
         let plotdata = [trace_bar];
         Plotly.newPlot("bar",plotdata,layout);

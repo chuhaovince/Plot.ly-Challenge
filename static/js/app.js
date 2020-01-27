@@ -1,5 +1,5 @@
 // Create the url to the samples.json file
-const jsonurl = "../../samples.json";
+const jsonurl = "../assets/samples.json";
 
 // store the raw data in ram so we dont have to query it everytime we call the function
 const rawData = d3.json(jsonurl);
